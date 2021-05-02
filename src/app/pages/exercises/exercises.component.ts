@@ -6,21 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./exercises.component.sass']
 })
 export class ExercisesComponent implements OnInit {
-  public exercises = [];
-  public selectedExercise = {};
-
-  public data = [
-    'Racing car sprays burning fuel into crowd.',
-    'Japanese princess to wed commoner.',
-    'Australian walks 100km after outback crash.',
-    'Man charged over missing wedding girl.',
-    'Los Angeles battles huge wildfires.'
+  public exercises = [
+    {
+      id: 1,
+      date: new Date(2020, 31, 10)
+    }
   ];
+  public currentExercise: any;
 
   constructor() { }
 
   ngOnInit() {
-    // select first exercise
+    this.currentExercise = this.exercises[0];
   }
 
 }
