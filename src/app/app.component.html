@@ -13,8 +13,16 @@
     </div>
     <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
       <li nz-menu-item nzMatchRouter>
-        <i nz-icon nzType="heart" nzTheme="outline"></i>
-        <a *ngIf="!isCollapsed" routerLink="/exercises">Exercises</a>
+        <a routerLink="/exercises">
+          <i nz-icon nzType="heart" nzTheme="outline"></i>
+          <span *ngIf="!isCollapsed">Exercises</span>
+        </a>
+      </li>
+      <li nz-menu-item nzMatchRouter>
+        <a routerLink="/users">
+          <i nz-icon nzType="user" nzTheme="outline"></i>
+          <span *ngIf="!isCollapsed">Users</span>
+        </a>
       </li>
     </ul>
   </nz-sider>
