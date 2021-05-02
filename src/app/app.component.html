@@ -20,8 +20,14 @@
       </li>
       <li nz-menu-item nzMatchRouter>
         <a routerLink="/users">
-          <i nz-icon nzType="user" nzTheme="outline"></i>
+          <i nz-icon nzType="team" nzTheme="outline"></i>
           <span *ngIf="!isCollapsed">Users</span>
+        </a>
+      </li>
+      <li nz-menu-item nzMatchRouter>
+        <a routerLink="/products">
+          <i nz-icon nzType="barcode" nzTheme="outline"></i>
+          <span *ngIf="!isCollapsed">Products</span>
         </a>
       </li>
     </ul>
