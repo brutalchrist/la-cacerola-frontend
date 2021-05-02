@@ -9,7 +9,13 @@ export class ExercisesComponent implements OnInit {
   public exercises = [
     {
       id: 1,
-      date: new Date(2020, 31, 10)
+      date: new Date("2019-04-24 00:00"),
+      published: false
+    },
+    {
+      id: 2,
+      date: new Date("2019-05-08 00:00"),
+      published: true
     }
   ];
   public currentExercise: any;
@@ -17,7 +23,7 @@ export class ExercisesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.currentExercise = this.exercises[0];
+    this.currentExercise = this.exercises.find(exercise => exercise.published);
   }
 
 }
