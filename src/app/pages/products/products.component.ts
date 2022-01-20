@@ -9,6 +9,8 @@ import { ProductsService } from 'src/app/services/products/products.service';
 })
 export class ProductsComponent implements OnInit {
   public products: Product[] = [];
+  public selectedProduct: Product = new Product({});
+  public drawerVisible = false;
 
   constructor(private productsService: ProductsService) { }
 
@@ -18,7 +20,23 @@ export class ProductsComponent implements OnInit {
     });
   }
 
-  edit(product: any): void {
-    console.log('product :', product);
+  newProduct(): void {
+    this.drawerVisible = true;
+    this.selectedProduct = new Product({});
+    console.log('selectedProduct :', this.selectedProduct);
+  }
+
+  editProduct(product: any): void {
+    this.drawerVisible = true;
+    this.selectedProduct = product;
+    console.log('product:', product);
+  }
+
+  deleteProduct(product: any): void {
+    console.log('delete:', product);
+  }
+
+  closeDrawer(): void {
+    this.drawerVisible = false;
   }
 }

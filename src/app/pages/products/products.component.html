@@ -1,7 +1,7 @@
 <div>
   <div class="ant-descriptions-header">
     <span class="ant-descriptions-title">Products</span>
-    <button nz-button nzType="primary"><i nz-icon nzType="plus" nzTheme="outline"></i>New</button>
+    <button nz-button nzType="primary" (click)="newProduct()"><i nz-icon nzType="plus" nzTheme="outline"></i>New</button>
   </div>
   <nz-list class="demo-loadmore-list">
     <nz-list-item *ngFor="let item of products">
@@ -15,10 +15,19 @@
           </nz-list-item-meta-title>
         </nz-list-item-meta>
         <ul nz-list-item-actions>
-          <nz-list-item-action><a (click)="edit(item)">edit</a></nz-list-item-action>
+          <nz-list-item-action><a (click)="editProduct(item)">edit</a></nz-list-item-action>
+          <nz-list-item-action>
+            <button nz-button nzType="link" (click)="deleteProduct(item)" nzDanger>delete</button>
+          </nz-list-item-action>
         </ul>
       </ng-container>
       <!-- <nz-skeleton *ngIf="item.loading" [nzAvatar]="true" [nzActive]="true" [nzTitle]="false" [nzLoading]="true"> </nz-skeleton> -->
     </nz-list-item>
   </nz-list>
 </div>
+
+<nz-drawer [nzVisible]="drawerVisible" [nzWidth]="640" [nzClosable]="false" (nzOnClose)="closeDrawer()">
+  <ng-container *nzDrawerContent>
+    <span>{{selectedProduct.name}}</span>
+  </ng-container>
+</nz-drawer>
